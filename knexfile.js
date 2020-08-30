@@ -2,20 +2,12 @@
 
 module.exports = {
   development: {
-    client: "pg",
+    client: "sqlite3",
     connection: {
-      database: "orcamentos",
-      user: "postgres",
-      password: "root",
-      host: "127.0.0.1",
-    },
-    pool: {
-      min: 2,
-      max: 10,
+      filename: "./src/database/db.sqlite",
     },
     migrations: {
       directory: "./src/database/migrations",
-      tableName: "knex_migrations",
     },
     useNullAsDefault: true,
   },
