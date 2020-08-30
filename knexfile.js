@@ -2,14 +2,18 @@
 
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: 'pg',
     connection: {
-      filename: "./src/database/db.sqlite",
-    },
+    host: 'localhost',
+    user: 'postgres',
+    password: 'root',
+    database: 'orcamentos',
+    port: 5432
+  },
     migrations: {
-      directory: "./src/database/migrations",
+      directory: './database/migrations'
     },
-    useNullAsDefault: true,
+    useNullAsDefault: true
   },
 
   production: { 
@@ -21,7 +25,6 @@ module.exports = {
     },
     migrations: {
       directory: "./migrations",
-      tableName: "knex_migrations",
     },
   }
 };
