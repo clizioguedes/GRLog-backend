@@ -1,6 +1,6 @@
 CREATE TABLE orcamentos (
     id integer PRIMARY KEY,
-    dataCadastro date NOT NULL,
+    datacadastro date NOT NULL,
     nome varchar(200) NOT NULL,
     email varchar(50) NOT NULL,
     celular varchar(11) NOT NULL,
