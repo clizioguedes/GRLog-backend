@@ -8,4 +8,8 @@ app.use(cors())
 app.use(express.json())
 app.use(routes)
 
+app.get('/', function(req, res) {
+    res.send('hello world');
+  });
+
 app.listen(3333);

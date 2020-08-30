@@ -6,6 +6,8 @@ const sessionController = require("./controller/SessionController");
 
 const routes = express.Router();
 
+routes.get("/");
+
 routes.post("/sessions", sessionController.create);
 
 routes.get("/orcamentos", orcamentoController.index);
