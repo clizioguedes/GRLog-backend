@@ -3,7 +3,7 @@ const connection = require("../database/connection");
 const crypto = require("crypto");
 
 module.exports = {
-  async index(request, response) {
+  async index (request, response) {
     const { page = 1 } = request.query;
 
     const [count] = await connection("orcamentos").count();
@@ -18,10 +18,10 @@ module.exports = {
     return response.json(orcamentos);
   },
 
-  async create(request, response) {
+  async create (request, response) {
     const id = crypto.randomBytes(4).toString("HEX");
 
-    const dataCadastro = new Date().toLocaleString();
+    const datacadastro = new Date().toLocaleString();
 
     const {
       nome,
@@ -39,7 +39,7 @@ module.exports = {
 
     await connection("orcamentos").insert({
       id,
-      dataCadastro,
+      datacadastro,
       nome,
       email,
       celular,
@@ -55,7 +55,7 @@ module.exports = {
     return response.json({ id });
   },
 
-  async update(request, response) {
+  async update (request, response) {
     try {
       const { id } = request.params;
       const { status } = request.body;
@@ -63,7 +63,7 @@ module.exports = {
       await connection("orcamentos").update({ status: status }).where('id', id);
       return response.send();
     } catch (error) {
-        request.status(500).json({message: 'Não há orçamentos cadastrados'})
+      request.status(500).json({ message: 'Não há orçamentos cadastrados' })
     }
   },
 };
