@@ -12,24 +12,16 @@ module.exports = {
     useNullAsDefault: true,
   },
 
-  staging: {
-    client: "pg",
-    connection: {
-      database: "orcamentos",
-      user: "postgres",
-      password: "root",
-      host: "127.0.0.1",
-    },
+  production: { 
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
-      max: 10,
+      max: 10
     },
     migrations: {
-      directory: "./src/database/migrations",
+      directory: "./migrations",
       tableName: "knex_migrations",
     },
-    useNullAsDefault: true,
-  },
-
-  production: { client: 'pg', connection: process.env.DATABASE_URL }
+  }
 };

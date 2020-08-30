@@ -63,7 +63,7 @@ module.exports = {
       await connection("orcamentos").update({ status: status }).where('id', id);
       return response.send();
     } catch (error) {
-        console.log('erro');
+        request.status(500).json({message: 'Não há orçamentos cadastrados'})
     }
   },
 };
