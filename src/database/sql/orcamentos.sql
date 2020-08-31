@@ -1,5 +1,5 @@
 CREATE TABLE orcamentos (
-    id integer PRIMARY KEY,
+    id varchar(32) PRIMARY KEY,
     datacadastro date NOT NULL,
     nome varchar(200) NOT NULL,
     email varchar(50) NOT NULL,
@@ -9,6 +9,6 @@ CREATE TABLE orcamentos (
     valor integer NOT NULL,
     origem varchar(200) NOT NULL,
     destino varchar(200) NOT NULL,
-    observacao varchar(500) NOT NULL,
+    observacao varchar(500),
     status varchar(20) NOT NULL
 );
