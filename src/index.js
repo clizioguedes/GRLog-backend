@@ -5,7 +5,7 @@ const routes = require("./routes");
 const app = express();
 
 app.use(cors({
-  origin: 'https://page-grlog.herokuapp.com'
+  origin: 'http://www.grlogtrans.com.br'
 }))
 app.use(express.json())
 app.use(routes)
