@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
   origin: [
       'http://www.grlogtrans.com.br',
-      'localhost:3000'
+      'http://localhost:3000'
   ]
 }))
 app.use(express.json())
