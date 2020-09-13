@@ -5,7 +5,10 @@ const routes = require("./routes");
 const app = express();
 
 app.use(cors({
-  origin: 'http://www.grlogtrans.com.br'
+  origin: [
+      'http://www.grlogtrans.com.br',
+      'localhost:3000'
+  ]
 }))
 app.use(express.json())
 app.use(routes)
